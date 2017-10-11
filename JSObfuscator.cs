@@ -4,7 +4,7 @@ using System.IO;
 using PHPProjectObfuscator.Core;
 
 namespace PHPProjectObfuscator {
-    class JSObfuscator {
+    class JSObfuscator : IObfuscator {
         public JSObfuscator(string code) {
             this.code = code;
         }
