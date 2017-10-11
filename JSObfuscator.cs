@@ -5,18 +5,6 @@ using PHPProjectObfuscator.Core;
 
 namespace PHPProjectObfuscator {
     class JSObfuscator {
-        #region Inner classes
-        struct ScriptInfo {
-            public ScriptInfo(int position, string code) {
-                Position = position;
-                Code = code;
-            }
-
-            public readonly int Position;
-            public readonly string Code;
-        }
-        #endregion
-
         public JSObfuscator(string code) {
             this.code = code;
         }
@@ -61,11 +49,6 @@ namespace PHPProjectObfuscator {
                 process.WaitForExit();
             }
             return obfuscateCode;
-        }
-
-        ScriptInfo[] GetScripts() {
-
-            return null;
         }
     }
 }

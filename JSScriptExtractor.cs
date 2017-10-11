@@ -12,11 +12,11 @@ namespace PHPProjectObfuscator {
         // TODO: Improve pattern (problem <script><script></script></script>
         const string EXTRACT_REGEX_PATTERN = @"<script[^>]*>(?<Script>[\s\S]*?)<\/script>";
 
-        public string[] Extract() {
+        public ScriptInfo[] Extract() {
             return Regex.Matches(code, EXTRACT_REGEX_PATTERN)
                 .Cast<Match>()
-                .Select(x => x.Groups["Script"].Value)
-                .Where(x => !string.IsNullOrWhiteSpace(x))
+                .Select(x => new ScriptInfo(x.Groups["Script"].Index, x.Groups["Script"].Value))
+                .Where(x => !string.IsNullOrWhiteSpace(x.Code))
                 .ToArray();
             ;
         }
