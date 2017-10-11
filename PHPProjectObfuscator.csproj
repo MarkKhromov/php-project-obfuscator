@@ -47,11 +47,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\ITemplateBuilder.cs" />
+    <Compile Include="Core\ResourceReader.cs" />
+    <Compile Include="Core\TemplateBuilder.cs" />
+    <Compile Include="JSObfuscator.cs" />
+    <Compile Include="JSScriptExtractor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EmbeddedResource Include="JSObfuscatorScript.template" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
